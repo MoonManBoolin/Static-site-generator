@@ -23,7 +23,7 @@ class TestTextNode(unittest.TestCase):
         node1 = TextNode("This is *italic*", TextType.TEXT)
         node2 = TextNode("Already italic", TextType.ITALIC)
         new_nodes = split_nodes_delimiter([node1, node2], "*", TextType.ITALIC)
-        self.assertEqual(new_nodes, [TextNode("This is ", TextType.TEXT), TextNode("italic", TextType.ITALIC), TextNode("", TextType.TEXT), TextNode("Already italic", TextType.ITALIC),])
+        self.assertEqual(new_nodes, [TextNode("This is ", TextType.TEXT), TextNode("italic", TextType.ITALIC), TextNode("Already italic", TextType.ITALIC),])
     def test_multiple_delimiter_pairs(self):
         node = TextNode("A `code` and `more code` here", TextType.TEXT)
         new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
@@ -31,7 +31,7 @@ class TestTextNode(unittest.TestCase):
     def test_adjacent_delimiters(self):
         node = TextNode("**bold****bold2**", TextType.TEXT)
         new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)
-        self.assertEqual(new_nodes, [TextNode("", TextType.TEXT), TextNode("bold", TextType.BOLD), TextNode("", TextType.TEXT), TextNode("bold2", TextType.BOLD), TextNode("", TextType.TEXT),])
+        self.assertEqual(new_nodes, [TextNode("bold", TextType.BOLD), TextNode("bold2", TextType.BOLD),])
     def test_unmatched_split_delimiter_in_text(self):
         node = TextNode("This is text with an *unmatched split word", TextType.TEXT)
         with self.assertRaises(Exception):
