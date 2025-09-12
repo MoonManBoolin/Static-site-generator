@@ -2,18 +2,6 @@ import os
 import pathlib
 import shutil
 
-def copy_contents(source_dir, target_dir):
-    if not os.path.exists(source_dir):
-        return
-    if os.path.exists(target_dir):
-        try:
-            shutil.rmtree(target_dir)
-        except OSError as e:
-            print(f"Error deleting folder: {e}")
-    pathlib.Path(target_dir).mkdir(parents=True, exist_ok=True)
-    print("STARTING COPY PROCESS")
-    copy_contents_helper(source_dir, target_dir)
-
 def copy_contents_helper(source_dir, target_dir):
     if not os.path.exists(source_dir):
         return

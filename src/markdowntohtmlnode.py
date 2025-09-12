@@ -1,10 +1,10 @@
-from src.parentnode import ParentNode
-from src.blocktoblocktype import BlockType
-from src.markdowntoblocks import markdown_to_blocks
-from src.blocktoblocktype import block_to_block_type
-from src.texttonode import text_to_textnodes
-from src.texttohtml import text_node_to_html_node
-from src.leafnode import LeafNode
+from parentnode import ParentNode
+from blocktoblocktype import BlockType
+from markdowntoblocks import markdown_to_blocks
+from blocktoblocktype import block_to_block_type
+from texttonode import text_to_textnodes
+from texttohtml import text_node_to_html_node
+from leafnode import LeafNode
 import re
 
 def markdown_to_html_node(md):
