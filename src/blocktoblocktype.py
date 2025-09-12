@@ -10,6 +10,7 @@ class BlockType(Enum):
     ORDERED_LIST = "ordered_list"
     
 def block_to_block_type(markdown_text_block):
+    markdown_text_block = markdown_text_block.strip()
     if markdown_text_block.startswith("- "):
         correct_syntax = True
         for i in markdown_text_block.split("\n"):
