@@ -5,7 +5,6 @@ from src.blocktoblocktype import block_to_block_type
 from src.texttonode import text_to_textnodes
 from src.texttohtml import text_node_to_html_node
 from src.leafnode import LeafNode
-from src.textnode import TextNode, TextType
 import re
 
 def markdown_to_html_node(md):

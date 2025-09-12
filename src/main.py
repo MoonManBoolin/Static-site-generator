@@ -1,8 +1,8 @@
-from src.textnode import *
+from copystatic import copy_contents
+
 
 def main():
-    textnode1 = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
-    print(textnode1)
+    copy_contents("/home/moonman/workspace/github.com/Static-site-generator/static", "/home/moonman/workspace/github.com/Static-site-generator/public")
     
 if __name__ == "__main__":
     main()
