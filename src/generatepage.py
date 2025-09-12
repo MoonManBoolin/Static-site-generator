@@ -9,7 +9,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
         md = f.read()
     with open(template_path, "r", encoding="utf-8") as f:
         template = f.read()
-    title = extract_title(md)
+    title = extract_title(md).strip()
     html_content = markdown_to_html_node(md)
     html_content = html_content.to_html()
     
